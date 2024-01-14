@@ -30,7 +30,6 @@ Requires: gawk >= 4.0.0
 Requires: msmtp >= 1.8.0
 Requires: sed >= 4.0.0
 Requires: podget = 0.8.5
-Requires: gnome-terminal
 Requires: libxslt >= 1.0.28
 Requires: xmlstarlet >= 1.6.0
 
@@ -69,7 +68,7 @@ fi
 
 %files
 %defattr(-,root,root,-)
-%doc COPYING README README.md %{name}.pdf %{name}.html
+%doc COPYING README README.md
 %{_bindir}/%{name}
 %{_bindir}/podget-wrapper
 %{_bindir}/zsh-functions

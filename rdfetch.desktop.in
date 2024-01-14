@@ -7,7 +7,7 @@ Comment[en_US]=Command line menu app to manage podget Podcast feeds
 Path=
 StartupNotify=false
 TryExec=/usr/bin/rdfetch
-Exec=gnome-terminal --profile=rdfetch --geometry=132x32 --hide-menubar --command QQQbindirQQQ/rdfetch
+Exec=xfce4-terminal --profile=rdfetch --geometry=132x32 --hide-menubar --command QQQbindirQQQ/rdfetch
 Terminal=false
 Type=Application
 Categories=GNOME;Accessories;Rivendell;

@@ -48,16 +48,12 @@ EXTRA_DIST = autogen.sh             \
              podgetrc.in            \
              serverlist             \
              rdfetch.1              \
-             rdfetch.html           \
-             rdfetch.pdf            \
              rdfetch.xml
 
 CLEANFILES = *~        \
              *.rpm     \
              *.tar.gz  \
              *.1       \
-             *.pdf     \
-             *.html    \
              README    \
              README.md \
              $(dist_bin_SCRIPTS)
@@ -69,8 +65,6 @@ MAINTAINERCLEANFILES = *~            \
                        *.tar.gz      \
                        *.rpm         \
                        *.1           \
-                       *.html        \
-                       *.pdf         \
                        aclocal.m4    \
                        Makefile      \
                        Makefile.in   \
@@ -99,7 +93,7 @@ rpm:	dist
 	mv $(HOME)/rpmbuild/SRPMS/rdfetch-*.src.rpm $(top_srcdir)/
 	rm $(HOME)/rpmbuild/SOURCES/rdfetch-$(VERSION).tar.gz
 
-install-exec-am:	rdfetch.1 rdfetch.pdf rdfetch.html rdfetch podget-wrapper sendusr1
+install-exec-am:	rdfetch.1 rdfetch podget-wrapper sendusr1
 	mkdir -p $(DESTDIR)@HOMERD@/rdfetch/log/archive
 	mkdir -p $(DESTDIR)@HOMERD@/rdfetch/configuration
 	mkdir -p $(DESTDIR)@HOMERD@/rdfetch/podcasts
@@ -165,11 +159,7 @@ rdfetch.desktop:	$(srcdir)/rdfetch.desktop.in
 ##
 ## Build Dependencies
 ##
-sendusr1:	sendusr1.c
-%.html:	%.xml
-	xsltproc -o $@ $(DOCBOOK_STYLESHEETS)/xhtml/docbook.xsl $<
-%.pdf:	%.xml
-	xsltproc $(DOCBOOK_STYLESHEETS)/fo/docbook.xsl $< | fop - -pdf $@
+sendusr1$(EXEEXT):	sendusr1.c
 %.1:	%.xml
 	xsltproc $(DOCBOOK_STYLESHEETS)/manpages/docbook.xsl $<
 README:	README.md
