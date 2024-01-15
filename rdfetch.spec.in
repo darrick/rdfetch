@@ -29,9 +29,10 @@ Requires: grep >= 2.0.0
 Requires: gawk >= 4.0.0
 Requires: msmtp >= 1.8.0
 Requires: sed >= 4.0.0
-Requires: podget = 0.8.5
 Requires: libxslt >= 1.0.28
 Requires: xmlstarlet >= 1.6.0
+Requires: cronie
+Requires: nano 
 
 %define tartopdir %{name}-%{version}
 %define homerd /home/rd

@@ -136,7 +136,8 @@ function addOrReplaceFeed() {
     return 1
   fi
   typeset feedTitle="$(print ${rssXML} | ${XMLSTARLET} sel -t -m /rss/channel -v title)"
-  typeset -r feedEnclosureFileExt=${$(print "${rssXML}" | ${XMLSTARLET} sel -t -m /rss/channel -v item/enclosure/@url)##*.}
+  typeset -r firstFeedEnclosure=$(echo "${rssXML}" | ${XMLSTARLET} sel -t -m /rss/channel -v item/enclosure/@url --nl | ${HEAD} -n 1)
+  typeset -r feedEnclosureFileExt=${${firstFeedEnclosure%%\?*}##*.}
 
   ##########################################################################################
   ## Prompt for a name using ${feedTitle} as the default.
