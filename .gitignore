@@ -42,3 +42,6 @@ rdfetch
 rdfetch.spec
 sendusr1
 zsh-functions
+COPYING
+podgetrc
+rdfetch.desktop
