@@ -7,7 +7,7 @@ Standards-Version: 4.4.1
 Homepage: https://github.com/opensourceradio/rdfetch
 
 Package: rdfetch
-Architecture: amd64
+Architecture: all 
 Depends: dos2unix, podget, libxslt1.1, msmtp, xmlstarlet, zsh, ${shlibs:Depends}, ${misc:Depends}
 Description: A Rivendell podcast fetcher
  RDFetch is a podcast fetcher that integrates tightly with the

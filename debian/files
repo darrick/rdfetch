@@ -1,3 +1,2 @@
-rdfetch-dbgsym_0.4.15_amd64.deb debug optional automatic=yes
-rdfetch_0.4.15_amd64.buildinfo unknown optional
-rdfetch_0.4.15_amd64.deb unknown optional
+rdfetch_0.4.15_all.deb unknown optional
+rdfetch_0.4.15_arm64.buildinfo unknown optional
